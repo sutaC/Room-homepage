@@ -45,7 +45,9 @@
 </div>
 
 <div class="wrap">
-	<img src="/images/image-about-dark.jpg" alt="Example - dark" class="example" />
+	<section>
+		<img src="/images/image-about-dark.jpg" alt="Example - dark" class="example" />
+	</section>
 
 	<section aria-labelledby="about" class="about">
 		<h2 id="about">About our furniture</h2>
@@ -58,7 +60,9 @@
 		</p>
 	</section>
 
-	<img src="/images/image-about-light.jpg" alt="Example - light" class="example" />
+	<section>
+		<img src="/images/image-about-light.jpg" alt="Example - light" class="example" />
+	</section>
 </div>
 
 <footer>
