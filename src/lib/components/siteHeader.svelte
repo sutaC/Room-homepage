@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { slide } from 'svelte/transition';
-
 	let navActive = false;
 </script>
 
@@ -86,5 +84,32 @@
 
 	button.close {
 		margin-right: 2rem;
+	}
+
+	/* Desktop view */
+	@media (width >= 1000px) {
+		.hamburger {
+			display: none;
+		}
+
+		header {
+			flex-flow: row-reverse;
+			justify-content: start;
+			padding-left: 8%;
+			gap: 2rem;
+		}
+
+		nav {
+			display: block;
+		}
+
+		nav > a {
+			color: var(--clr-white);
+			padding-inline: 1rem;
+		}
+
+		nav > button.close {
+			display: none;
+		}
 	}
 </style>

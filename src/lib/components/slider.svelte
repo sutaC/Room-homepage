@@ -1,10 +1,43 @@
+<script>
+	import { createEventDispatcher } from 'svelte';
+
+	export let quantity = 1;
+
+	$: devidceWidth = 0;
+	$: device = devidceWidth < 1000 ? 'mobile' : 'desktop';
+	let index = 1;
+
+	// Actions
+	const dispatch = createEventDispatcher();
+
+	const moveLeft = () => {
+		if (index > 1) {
+			index--;
+			dispatch('action', {
+				index
+			});
+		}
+	};
+
+	const moveRight = () => {
+		if (index < quantity) {
+			index++;
+			dispatch('action', {
+				index
+			});
+		}
+	};
+</script>
+
+<svelte:window bind:innerWidth={devidceWidth} />
+
 <div class="slider">
-	<img src="/images/mobile-image-hero-1.jpg" alt="Main example" />
+	<img src="/images/{device}-image-hero-{index}.jpg" alt="Main example" />
 	<div class="controls">
-		<button class="left">
+		<button on:click={() => moveLeft()}>
 			<img src="/images/icon-angle-left.svg" alt="Show on left" />
 		</button>
-		<button class="right">
+		<button on:click={() => moveRight()}>
 			<img src="/images/icon-angle-right.svg" alt="Show on right" />
 		</button>
 	</div>
@@ -15,12 +48,16 @@
 		position: relative;
 	}
 
+	.slider > img {
+		width: 100%;
+	}
+
 	.controls {
 		position: absolute;
 		bottom: 0.2rem;
 		right: 0;
 
-		width: 33%;
+		width: clamp(10vw, 30%, 10rem);
 
 		aspect-ratio: 2 / 1;
 		display: flex;
@@ -38,5 +75,15 @@
 	}
 	.controls > button > img {
 		width: 25%;
+	}
+
+	@media (width >= 1000px) {
+		.slider > img {
+			width: 60.25vw;
+		}
+
+		.controls {
+			translate: 100% 0;
+		}
 	}
 </style>
