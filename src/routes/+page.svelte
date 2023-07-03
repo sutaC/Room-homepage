@@ -146,6 +146,11 @@
 		content: url('/images/icon-arrow.svg');
 		margin-left: 1em;
 	}
+	section.discover > a:hover,
+	section.discover > a:focus,
+	section.discover > a:active {
+		color: var(--clr-dGray);
+	}
 
 	section.about > h2 {
 		font-size: 1rem;

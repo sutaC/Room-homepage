@@ -72,10 +72,22 @@
 		border: none;
 		padding: 0;
 		flex: 1;
+		aspect-ratio: 1;
 	}
 	.controls > button > img {
 		width: 25%;
 	}
+
+	/* States */
+
+	.controls > button:hover,
+	.controls > button:focus,
+	.controls > button:active {
+		background-color: var(--clr-dGray);
+		cursor: pointer;
+	}
+
+	/* Desktop view */
 
 	@media (width >= 1000px) {
 		.slider > img {

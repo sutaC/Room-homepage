@@ -106,10 +106,29 @@
 		nav > a {
 			color: var(--clr-white);
 			padding-inline: 1rem;
+			position: relative;
 		}
 
 		nav > button.close {
 			display: none;
+		}
+
+		/* States */
+
+		nav > a:hover::after,
+		nav > a:focus::after,
+		nav > a:active::after {
+			content: '';
+			width: 25%;
+			height: 100%;
+
+			position: absolute;
+			left: 50%;
+			translate: -50% 0;
+
+			padding-bottom: 0.5em;
+			border-bottom: 2px solid var(--clr-white);
+			border-radius: 1px;
 		}
 	}
 </style>
