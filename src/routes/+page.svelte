@@ -27,43 +27,45 @@
 	};
 </script>
 
-<div class="wrap">
-	<section class="hero" aria-label="Hero">
-		<div class="header">
-			<SiteHeader />
-		</div>
-		<div class="slider">
-			<Slider quantity={3} on:action={handleSliderAction} />
-		</div>
-	</section>
+<main>
+	<div class="wrap">
+		<section class="hero" aria-label="Hero">
+			<div class="header">
+				<SiteHeader />
+			</div>
+			<div class="slider">
+				<Slider quantity={3} on:action={handleSliderAction} />
+			</div>
+		</section>
 
-	<section aria-labelledby="discover" class="discover">
-		<h1 id="discover">{discoveryContent[index].header}</h1>
-		<p>{discoveryContent[index].text}</p>
-		<a href="/">Shop now</a>
-	</section>
-</div>
+		<section aria-labelledby="discover" class="discover">
+			<h1 id="discover">{discoveryContent[index].header}</h1>
+			<p>{discoveryContent[index].text}</p>
+			<a href="/">Shop now</a>
+		</section>
+	</div>
 
-<div class="wrap">
-	<section>
-		<img src="/images/image-about-dark.jpg" alt="Example - dark" class="example" />
-	</section>
+	<div class="wrap">
+		<section>
+			<img src="/images/image-about-dark.jpg" alt="Example - dark" class="example" />
+		</section>
 
-	<section aria-labelledby="about" class="about">
-		<h2 id="about">About our furniture</h2>
+		<section aria-labelledby="about" class="about">
+			<h2 id="about">About our furniture</h2>
 
-		<p>
-			Our multifunctional collection blends design and function to suit your individual taste. Make
-			each room unique, or pick a cohesive theme that best express your interests and what inspires
-			you. Find the furniture pieces you need, from traditional to contemporary styles or anything
-			in between. Product specialists are available to help you create your dream space.
-		</p>
-	</section>
+			<p>
+				Our multifunctional collection blends design and function to suit your individual taste.
+				Make each room unique, or pick a cohesive theme that best express your interests and what
+				inspires you. Find the furniture pieces you need, from traditional to contemporary styles or
+				anything in between. Product specialists are available to help you create your dream space.
+			</p>
+		</section>
 
-	<section>
-		<img src="/images/image-about-light.jpg" alt="Example - light" class="example" />
-	</section>
-</div>
+		<section>
+			<img src="/images/image-about-light.jpg" alt="Example - light" class="example" />
+		</section>
+	</div>
+</main>
 
 <footer>
 	Challenge by <a
