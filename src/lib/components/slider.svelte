@@ -1,5 +1,6 @@
-<script>
+<script lang="ts">
 	import { createEventDispatcher } from 'svelte';
+	import { prevent_default } from 'svelte/internal';
 
 	export let quantity = 1;
 
@@ -27,9 +28,23 @@
 			});
 		}
 	};
+
+	const handleKeyPress = (event: KeyboardEvent) => {
+		switch (event.key) {
+			case 'ArrowLeft':
+				event.preventDefault();
+				moveLeft();
+				break;
+
+			case 'ArrowRight':
+				event.preventDefault();
+				moveRight();
+				break;
+		}
+	};
 </script>
 
-<svelte:window bind:innerWidth={devidceWidth} />
+<svelte:window bind:innerWidth={devidceWidth} on:keydown={handleKeyPress} />
 
 <div class="slider">
 	<img src="/images/{device}-image-hero-{index}.jpg" alt="Main example" />
